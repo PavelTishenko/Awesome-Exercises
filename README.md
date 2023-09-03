@@ -3,6 +3,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 # Getting Started
 <img width="443" alt="Снимок экрана 2023-09-03 в 11 14 47 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/f95cb27d-7130-42f3-a964-088e8f37ba31">
 <img width="445" alt="Снимок экрана 2023-09-03 в 11 14 36 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/49a5eb4d-dd39-4f9f-9a17-2b941432a46f">
+<img width="398" alt="Снимок экрана 2023-09-03 в 11 16 19 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/673dbc89-2288-44f2-8004-2bdfc971a8c9">
 <img width="403" alt="Снимок экрана 2023-09-03 в 11 15 05 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/71d578a6-d91b-4448-af5e-273d6f307a82">
 
 
