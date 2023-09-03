@@ -5,6 +5,7 @@ import { Card, MD3Theme, useTheme } from 'react-native-paper';
 import { ExerciseType, Response } from '@/api/types.api';
 import { Icon } from '@/components/Icon';
 import { StyleSheet } from 'react-native';
+import { capitalizeFirstLetter } from '@/utils/textUtils';
 
 type Props = {
   exercise: Response;
@@ -37,6 +38,14 @@ const useStyles = (theme: MD3Theme) =>
         infoText: {
           fontSize: 16,
         },
+        subtitleTitle: {
+          fontSize: 17,
+          color: theme.colors.outline,
+        },
+        instructions: {
+          fontSize: 17,
+          color: theme.colors.primary,
+        },
       }),
     [theme],
   );
@@ -44,6 +53,10 @@ const useStyles = (theme: MD3Theme) =>
 export const ListItem = ({ exercise }: Props) => {
   const theme = useTheme();
   const styles = useStyles(theme);
+
+  const capitalizedType = useMemo(() => capitalizeFirstLetter(exercise?.type as string), [exercise])
+  const capitalizedEquipment = useMemo(() => capitalizeFirstLetter(exercise?.equipment as string), [exercise])
+  const capitalizedMuscleType = useMemo(() => capitalizeFirstLetter(exercise?.muscle as string), [exercise])
 
   return (
     <View style={styles.container} testID="ITEM_CONTAINER_TEST_ID">
@@ -58,15 +71,25 @@ export const ListItem = ({ exercise }: Props) => {
             <View style={styles.contentHolder}>
               <View style={styles.info}>
                 <View>
-                  <Text style={styles.infoText}>Type: {exercise.type}</Text>
                   <Text style={styles.infoText}>
-                    Equipment: {exercise.equipment}
+                    <Text style={styles.subtitleTitle}>Type: </Text>
+                    {capitalizedType}
                   </Text>
-                  <Text style={styles.infoText}>Muscle: {exercise.muscle}</Text>
+                  <Text style={styles.infoText}>
+                    <Text style={styles.subtitleTitle}>Equipment: </Text>
+                    {capitalizedEquipment}
+                  </Text>
+                  <Text style={styles.infoText}>
+                    <Text style={styles.subtitleTitle}>Muscle: </Text>
+                    {capitalizedMuscleType}
+                  </Text>
                 </View>
                 <Icon type={exercise.type as ExerciseType} />
               </View>
-              <Text>Instructions: {exercise.instructions}</Text>
+              <Text>
+                <Text style={styles.instructions}>Instructions: </Text>
+                {`${exercise.instructions ? exercise.instructions : 'No instructions'}`}
+              </Text>
             </View>
           </View>
         </Card.Content>

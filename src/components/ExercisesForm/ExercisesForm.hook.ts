@@ -13,6 +13,7 @@ import {
   ExercisesType,
   SelectOption,
 } from '@/types';
+import { capitalizeFirstLetter } from '@/utils/textUtils';
 
 const EXERCISE_NAME_LENGTH = 30;
 
@@ -90,9 +91,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesType).map(
       (type): SelectOption => ({
         value: ExercisesType[type],
-        label:
-          ExercisesType[type].charAt(0).toUpperCase() +
-          ExercisesType[type].slice(1),
+        label: capitalizeFirstLetter(ExercisesType[type])
       }),
     );
   }, []);
@@ -101,9 +100,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesMusclesMap).map(
       (type): SelectOption => ({
         value: ExercisesMusclesMap[type],
-        label:
-          ExercisesMusclesMap[type].charAt(0).toUpperCase() +
-          ExercisesMusclesMap[type].slice(1),
+        label:capitalizeFirstLetter(ExercisesMusclesMap[type])
       }),
     );
   }, []);
@@ -112,9 +109,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesDifficultyMap).map(
       (type): SelectOption => ({
         value: ExercisesDifficultyMap[type],
-        label:
-          ExercisesDifficultyMap[type].charAt(0).toUpperCase() +
-          ExercisesDifficultyMap[type].slice(1),
+        label:capitalizeFirstLetter(ExercisesDifficultyMap[type])
       }),
     );
   }, []);
