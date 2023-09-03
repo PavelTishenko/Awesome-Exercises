@@ -1,2 +1,2 @@
-export * from './Form';
+export * from './FormScreen';
 export * from './ResultScreen';
