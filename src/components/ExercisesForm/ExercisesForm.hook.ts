@@ -33,7 +33,7 @@ const defaultValues: FormValues = {
 
 export const useExercisesForm = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const [trigger, { data = [], isLoading, isFetching, isSuccess }] =
+  const [trigger, { isLoading, isFetching }] =
     baseAPI.endpoints.getExercises.useLazyQuery();
 
   const validationSchema = useMemo(
@@ -55,14 +55,7 @@ export const useExercisesForm = () => {
     mode: 'onSubmit',
   });
 
-  useEffect(() => {
-    if (data.length >= 1 && isSuccess) {
-      navigation.navigate(Screens.RESULT, { params: data });
-      reset();
-    }
-  }, [data, navigation]);
-
-  const { errors, dirtyFields, isDirty } = formState;
+  const { isDirty } = formState;
   const isDataLoading = isLoading || isFetching;
 
   const handleSearchOnPress = useCallback(
@@ -70,15 +63,17 @@ export const useExercisesForm = () => {
       try {
         const res = await trigger(formData);
 
+        if (res.data && res?.data?.length >= 1 && res.isSuccess) {
+          navigation.navigate(Screens.RESULT, { params: res.data });
+          reset();
+        }
+        
         if (res.data && res?.data?.length < 1 && !res.isError) {
           Alert.alert('Nop', 'There is no such exercises', [
             { text: 'OK', onPress: () => reset() },
           ]);
         }
 
-        if ('error' in res) {
-          Alert.alert('Something goes wrong', 'Please try later');
-        }
       } catch (e) {
         Alert.alert('Something goes wrong', e as string);
         console.log(e);
@@ -119,12 +114,8 @@ export const useExercisesForm = () => {
     selectMusclesOptions,
     selectDifficultyOptions,
     control,
-    errors,
     isDirty,
-    dirtyFields,
-    exerciseData: data,
     isDataLoading,
-    isSuccess,
     getExercises: handleSubmit(handleSearchOnPress),
   };
 };
