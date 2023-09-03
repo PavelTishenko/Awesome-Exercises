@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 import { ExerciseType } from '@/api/types.api';
@@ -8,7 +9,6 @@ import olimpic from '@/assets/svg/olimpic';
 import plyo from '@/assets/svg/plyo';
 import strenght from '@/assets/svg/strenght';
 import stretch from '@/assets/svg/stretch';
-import { View } from 'react-native';
 
 type Props = {
   type: ExerciseType;

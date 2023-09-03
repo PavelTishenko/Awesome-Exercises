@@ -38,7 +38,7 @@ const useStyles = (theme: MD3Theme) =>
           fontSize: 16,
         },
       }),
-    [],
+    [theme],
   );
 
 export const ListItem = ({ exercise }: Props) => {
