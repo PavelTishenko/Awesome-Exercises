@@ -42,9 +42,7 @@ const ExercisesForm = (props: ExercisesFormProps) => {
               {...field}
               testID="FORM_NAME_INPUT"
               onBlur={field.onBlur}
-              onChangeText={text => {
-                field.onChange(text);
-              }}
+              onChangeText={field.onChange}
               disabled={isDataLoading}
               placeholder="Enter exercise name e.g. Press"
               placeholderTextColor={theme.colors.outlineVariant}

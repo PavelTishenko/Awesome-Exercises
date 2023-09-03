@@ -32,7 +32,7 @@ const defaultValues: FormValues = {
 
 export const useExercisesForm = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const [trigger, { data = [], isLoading, isFetching, isSuccess }] =
+  const [trigger, { data = [], isLoading, isFetching, isSuccess, isError }] =
     baseAPI.endpoints.getExercises.useLazyQuery();
 
   const validationSchema = useMemo(
@@ -48,7 +48,7 @@ export const useExercisesForm = () => {
     [],
   );
 
-  const { control, handleSubmit, formState, watch, reset, getValues } =
+  const { control, handleSubmit, formState, reset, getValues } =
     useForm<FormValues>({
       defaultValues: defaultValues,
       resolver: yupResolver(validationSchema),
@@ -70,8 +70,10 @@ export const useExercisesForm = () => {
       try {
         const res = await trigger(formData);
 
-        if (!('data' in res) && !('error' in res)) {
-          Alert.alert('Nop', 'There is no such exercises');
+        if (data.length < 1 && !isError) {
+          Alert.alert('Nop', 'There is no such exercises', [
+            { text: 'OK', onPress: () => reset() },
+          ]);
         }
 
         if ('error' in res) {
