@@ -36,14 +36,14 @@ const useStyles = (theme: MD3Theme) =>
           alignItems: 'center',
         },
         infoText: {
-          fontSize: 16,
+          fontSize: 15.5,
         },
         subtitleTitle: {
           fontSize: 17,
           color: theme.colors.outline,
         },
         instructions: {
-          fontSize: 17,
+          fontSize: 18,
           color: theme.colors.primary,
         },
       }),
@@ -86,7 +86,7 @@ export const ListItem = ({ exercise }: Props) => {
                 </View>
                 <Icon type={exercise.type as ExerciseType} />
               </View>
-              <Text>
+              <Text style={styles.infoText}>
                 <Text style={styles.instructions}>Instructions: </Text>
                 {`${exercise.instructions ? exercise.instructions : 'No instructions'}`}
               </Text>
