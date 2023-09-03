@@ -1,10 +1,10 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
-<img width="433" alt="Снимок экрана 2023-09-03 в 5 34 47 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/6abfa020-d941-408a-a970-32344de478a4">
-<img width="436" alt="Снимок экрана 2023-09-03 в 5 35 18 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/f1f20d81-c38f-437d-baa7-2aab622897a6">
-<img width="429" alt="Снимок экрана 2023-09-03 в 5 35 56 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/95187c37-ddd7-4c10-b81e-3ab8d83e62f0">
-<img width="421" alt="Снимок экрана 2023-09-03 в 5 33 45 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/26a01b27-3e29-45b4-b44e-c84892979b0d">
+<img width="443" alt="Снимок экрана 2023-09-03 в 11 14 47 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/f95cb27d-7130-42f3-a964-088e8f37ba31">
+<img width="445" alt="Снимок экрана 2023-09-03 в 11 14 36 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/49a5eb4d-dd39-4f9f-9a17-2b941432a46f">
+<img width="403" alt="Снимок экрана 2023-09-03 в 11 15 05 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/71d578a6-d91b-4448-af5e-273d6f307a82">
+
 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
