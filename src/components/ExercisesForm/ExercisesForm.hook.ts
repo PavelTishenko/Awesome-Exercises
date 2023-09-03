@@ -32,7 +32,7 @@ const defaultValues: FormValues = {
 
 export const useExercisesForm = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const [trigger, { data = [], isLoading, isFetching, isSuccess, isError }] =
+  const [trigger, { data = [], isLoading, isFetching, isSuccess }] =
     baseAPI.endpoints.getExercises.useLazyQuery();
 
   const validationSchema = useMemo(
@@ -48,12 +48,11 @@ export const useExercisesForm = () => {
     [],
   );
 
-  const { control, handleSubmit, formState, reset, getValues } =
-    useForm<FormValues>({
-      defaultValues: defaultValues,
-      resolver: yupResolver(validationSchema),
-      mode: 'onSubmit',
-    });
+  const { control, handleSubmit, formState, reset } = useForm<FormValues>({
+    defaultValues: defaultValues,
+    resolver: yupResolver(validationSchema),
+    mode: 'onSubmit',
+  });
 
   useEffect(() => {
     if (data.length >= 1 && isSuccess) {
@@ -70,7 +69,7 @@ export const useExercisesForm = () => {
       try {
         const res = await trigger(formData);
 
-        if (data.length < 1 && !isError) {
+        if (res.data && res?.data?.length < 1 && !res.isError) {
           Alert.alert('Nop', 'There is no such exercises', [
             { text: 'OK', onPress: () => reset() },
           ]);
