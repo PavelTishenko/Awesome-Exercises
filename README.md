@@ -5,6 +5,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ![Simulator Screenshot - iPhone 14 Pro - 2023-09-03 at 17 31 14](https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/a1f673e5-07e0-4c1a-9c90-d9e5b4d9d780)
 ![Simulator Screenshot - iPhone 14 Pro - 2023-09-03 at 17 31 41](https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/6f547322-bf81-4a16-af8a-e26d50eff77d)
 ![Simulator Screenshot - iPhone 14 Pro - 2023-09-03 at 17 32 18](https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/4e106d55-c5f1-4d00-b3db-7e06d07c3f63)
+<img width="421" alt="Снимок экрана 2023-09-03 в 5 33 45 PM" src="https://github.com/PavelTishenko/Awesome-Exercises/assets/32521236/26a01b27-3e29-45b4-b44e-c84892979b0d">
 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
