@@ -67,13 +67,12 @@ export const useExercisesForm = () => {
           navigation.navigate(Screens.RESULT, { params: res.data });
           reset();
         }
-        
+
         if (res.data && res?.data?.length < 1 && !res.isError) {
           Alert.alert('Nop', 'There is no such exercises', [
             { text: 'OK', onPress: () => reset() },
           ]);
         }
-
       } catch (e) {
         Alert.alert('Something goes wrong', e as string);
         console.log(e);
@@ -86,7 +85,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesType).map(
       (type): SelectOption => ({
         value: ExercisesType[type],
-        label: capitalizeFirstLetter(ExercisesType[type])
+        label: capitalizeFirstLetter(ExercisesType[type]),
       }),
     );
   }, []);
@@ -95,7 +94,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesMusclesMap).map(
       (type): SelectOption => ({
         value: ExercisesMusclesMap[type],
-        label:capitalizeFirstLetter(ExercisesMusclesMap[type])
+        label: capitalizeFirstLetter(ExercisesMusclesMap[type]),
       }),
     );
   }, []);
@@ -104,7 +103,7 @@ export const useExercisesForm = () => {
     return Object.values(ExercisesDifficultyMap).map(
       (type): SelectOption => ({
         value: ExercisesDifficultyMap[type],
-        label:capitalizeFirstLetter(ExercisesDifficultyMap[type])
+        label: capitalizeFirstLetter(ExercisesDifficultyMap[type]),
       }),
     );
   }, []);

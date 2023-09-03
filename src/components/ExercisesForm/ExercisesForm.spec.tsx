@@ -10,10 +10,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
 import ExercisesForm from './ExercisesForm';
-import { act } from 'react-test-renderer';
 
 const FORM_NAME_INPUT = 'FORM_NAME_INPUT';
-const INPUT_PLACEHOLDER = 'Enter exercise name';
+const INPUT_PLACEHOLDER = 'Enter exercise name e.g. Press';
 const INPUT_VALUE = 'Check';
 const TYPE_TEST_ID = 'TYPE_TEST_ID';
 

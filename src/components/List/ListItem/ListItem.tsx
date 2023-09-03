@@ -54,9 +54,18 @@ export const ListItem = ({ exercise }: Props) => {
   const theme = useTheme();
   const styles = useStyles(theme);
 
-  const capitalizedType = useMemo(() => capitalizeFirstLetter(exercise?.type as string), [exercise])
-  const capitalizedEquipment = useMemo(() => capitalizeFirstLetter(exercise?.equipment as string), [exercise])
-  const capitalizedMuscleType = useMemo(() => capitalizeFirstLetter(exercise?.muscle as string), [exercise])
+  const capitalizedType = useMemo(
+    () => capitalizeFirstLetter(exercise?.type as string),
+    [exercise],
+  );
+  const capitalizedEquipment = useMemo(
+    () => capitalizeFirstLetter(exercise?.equipment as string),
+    [exercise],
+  );
+  const capitalizedMuscleType = useMemo(
+    () => capitalizeFirstLetter(exercise?.muscle as string),
+    [exercise],
+  );
 
   return (
     <View style={styles.container} testID="ITEM_CONTAINER_TEST_ID">
@@ -88,7 +97,11 @@ export const ListItem = ({ exercise }: Props) => {
               </View>
               <Text style={styles.infoText}>
                 <Text style={styles.instructions}>Instructions: </Text>
-                {`${exercise.instructions ? exercise.instructions : 'No instructions'}`}
+                {`${
+                  exercise.instructions
+                    ? exercise.instructions
+                    : 'No instructions'
+                }`}
               </Text>
             </View>
           </View>
