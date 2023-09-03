@@ -46,7 +46,7 @@ const ExercisesForm = (props: ExercisesFormProps) => {
                 field.onChange(text);
               }}
               disabled={isDataLoading}
-              placeholder="Enter exercise name"
+              placeholder="Enter exercise name e.g. Press"
               placeholderTextColor={theme.colors.outlineVariant}
               error={!!fieldState.error}
             />
