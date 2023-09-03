@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Alert } from 'react-native';
 import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import { useForm } from 'react-hook-form';
@@ -11,9 +11,8 @@ import {
   ExercisesDifficultyMap,
   ExercisesMusclesMap,
   ExercisesType,
-  SelectOption,
 } from '@/types';
-import { capitalizeFirstLetter } from '@/utils/textUtils';
+import { selectOptions } from '@/utils/selectUtils';
 
 const EXERCISE_NAME_LENGTH = 30;
 
@@ -81,32 +80,17 @@ export const useExercisesForm = () => {
     [trigger],
   );
 
-  const selectTypeOptions = useMemo(() => {
-    return Object.values(ExercisesType).map(
-      (type): SelectOption => ({
-        value: ExercisesType[type],
-        label: capitalizeFirstLetter(ExercisesType[type]),
-      }),
-    );
-  }, []);
+  const selectTypeOptions = useMemo(() => selectOptions(ExercisesType), []);
 
-  const selectMusclesOptions = useMemo(() => {
-    return Object.values(ExercisesMusclesMap).map(
-      (type): SelectOption => ({
-        value: ExercisesMusclesMap[type],
-        label: capitalizeFirstLetter(ExercisesMusclesMap[type]),
-      }),
-    );
-  }, []);
+  const selectMusclesOptions = useMemo(
+    () => selectOptions(ExercisesMusclesMap),
+    [],
+  );
 
-  const selectDifficultyOptions = useMemo(() => {
-    return Object.values(ExercisesDifficultyMap).map(
-      (type): SelectOption => ({
-        value: ExercisesDifficultyMap[type],
-        label: capitalizeFirstLetter(ExercisesDifficultyMap[type]),
-      }),
-    );
-  }, []);
+  const selectDifficultyOptions = useMemo(
+    () => selectOptions(ExercisesDifficultyMap),
+    [],
+  );
 
   return {
     selectTypeOptions,
