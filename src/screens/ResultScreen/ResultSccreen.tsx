@@ -34,5 +34,3 @@ const Form = () => {
 };
 
 export default Form;
-
-const styles = StyleSheet.create({});
