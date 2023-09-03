@@ -1,5 +1,3 @@
-import { setFormField } from '@/store/formSlice';
-import { useAppDispatch } from '@/store/store';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { StyleProp, View, ViewStyle } from 'react-native';
@@ -62,6 +60,7 @@ const ExercisesForm = (props: ExercisesFormProps) => {
           render={({ field }) => (
             <Select
               {...field}
+              testId="TYPE_TEST_ID"
               placeholder="Select exercise type"
               value={field.value as string}
               disabled={isDataLoading}

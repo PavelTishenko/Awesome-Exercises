@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import FormContext from './FormContext'; // You may need to import the correct path for your FormContext
 import FormItem from './FormItem';
 import { useForm } from 'react-hook-form';
 import * as formHooks from 'react-hook-form';
@@ -23,7 +22,6 @@ const ComponentWithFormItem = () => {
     <FormItem
       name="exercise"
       control={control}
-      index={1}
       render={({ field, fieldState }) => (
         <TextInput
           {...field}
