@@ -20,17 +20,17 @@ const useStyles = (theme: MD3Theme) => {
   );
 };
 
-const Form = () => {
+const ResultScreen = () => {
   const { params } = useRoute<RouteProp<RootStackParamList, Screens.RESULT>>();
   const { params: exercises } = params;
   const theme = useTheme();
   const styles = useStyles(theme);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="RESULT_CONTAINER_TEST_ID">
       <List items={exercises} />
     </View>
   );
 };
 
-export default Form;
+export default ResultScreen;

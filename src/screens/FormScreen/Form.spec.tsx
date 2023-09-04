@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react-native';
-import Form from './Form';
-import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
+import { render, waitFor } from '@testing-library/react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Form from './Form';
 import { store } from '@/store/store';
 
 const FORM_ICON_ID = 'FORM_ICON';

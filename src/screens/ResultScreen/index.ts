@@ -1,1 +1,1 @@
-export {default as ResultScreen} from './ResultSccreen';
+export { default as ResultScreen } from './ResultScreen';
