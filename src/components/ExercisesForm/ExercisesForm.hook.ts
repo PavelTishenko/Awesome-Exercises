@@ -74,7 +74,6 @@ export const useExercisesForm = () => {
         }
       } catch (e) {
         Alert.alert('Something goes wrong', e as string);
-        console.log(e);
       }
     },
     [trigger],
