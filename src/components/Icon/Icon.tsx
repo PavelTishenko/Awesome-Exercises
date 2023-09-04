@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
@@ -15,7 +15,7 @@ type Props = {
 };
 
 const Icon = ({ type }: Props) => {
-  const getIconByType = () => {
+  const getIconByType = useCallback(() => {
     switch (type) {
       case 'cardio':
         return cardio;
@@ -32,7 +32,8 @@ const Icon = ({ type }: Props) => {
       case 'strongman':
         return gantl;
     }
-  };
+  }, [type]);
+
   return (
     <View testID="img">
       <SvgXml
